@@ -1,4 +1,4 @@
-package com.german.numbers.adapter
+package com.german.numbers
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.german.numbers.R
-import com.german.numbers.model.Numbers
 
 class ItemAdapter (private val context:Context, private val dataset: List<Numbers>): RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(){
 
@@ -32,8 +30,8 @@ class ItemAdapter (private val context:Context, private val dataset: List<Number
         return dataset.size
     }
 
-    fun updateNumbersList(newNumber: Numbers){
-        notifyDataSetChanged()
+    fun updateNumbersList(){
+        notifyItemInserted(dataset.size-1)
     }
 
 }
